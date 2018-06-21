@@ -4,7 +4,8 @@ import { BasicService } from '../services/basic.service';
 //Componente modal
 import { ConfirmComponent } from '../confirm/confirm.component';
 //Servicio de dialogo
-import {DialogService} from 'ng2-bootstrap-modal';
+import { DialogService } from 'ng2-bootstrap-modal';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-autos',
@@ -18,6 +19,7 @@ export class AutosComponent implements OnInit {
   public titulo: String
   
   constructor(
+    private router: Router,
     private basicService: BasicService,
     private dialogService: DialogService
   ) { 
@@ -36,6 +38,7 @@ export class AutosComponent implements OnInit {
           'No hay autos','error')
         }else{
           this.autos = autos.data
+          localStorage.setItem('autos', JSON.stringify(this.autos))
         }
       },
       (error)=>{
@@ -65,6 +68,10 @@ export class AutosComponent implements OnInit {
     setTimeout(()=>{
         disposable.unsubscribe();
     },10000);
+  }
+
+  view(auto:any){
+    this.router.navigate(['/autos', auto._id, 'detail'])
   }
 }
 

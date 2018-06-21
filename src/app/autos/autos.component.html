@@ -27,12 +27,13 @@
           <td class="text-right">{{auto.anio}}</td>
           <td>{{auto.version | uppercase}}</td>
           <td>
-          <button type="button" 
-                  class="btn btn-info">Ver</button>
-          <button type="button" 
-                  class="btn btn-primary">Editar</button>
-          <button type="button" 
-                  class="btn btn-danger">Eliminar</button>
+            <!--<button [routerLink]="['/autos', auto._id, 'detail']" type="button" 
+                    class="btn btn-info">Ver</button>-->
+            <button (click)="view(auto)" type="button" class="btn btn-info">Ver</button>    
+            <button type="button" 
+                    class="btn btn-primary">Editar</button>
+            <button type="button" 
+                    class="btn btn-danger">Eliminar</button>
           </td>
       </tr>
   </tbody>
