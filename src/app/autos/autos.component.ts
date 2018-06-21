@@ -75,7 +75,7 @@ export class AutosComponent implements OnInit {
   }
 }
 
-class Auto {
+export class Auto {
   constructor(
     public marca:string,
     public modelo:string,

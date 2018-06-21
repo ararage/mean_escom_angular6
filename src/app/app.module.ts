@@ -12,13 +12,15 @@ import {BootstrapModalModule} from 'ng2-bootstrap-modal';
 import { ConfirmComponent } from './confirm/confirm.component';
 import { RouteRoutingModule } from './route/route-routing.module';
 import { ReadAutoComponent } from './read-auto/read-auto.component';
+import { CreateAutoComponent } from './create-auto/create-auto.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AutosComponent,
     ConfirmComponent,
-    ReadAutoComponent
+    ReadAutoComponent,
+    CreateAutoComponent
   ],
   imports: [
     BrowserModule,
